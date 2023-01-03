@@ -23,14 +23,14 @@ function Hero({ pageInfo }: Props) {
             src={urlFor(pageInfo?.heroImage).url()}
             width={320}
             height={320}
-            className="relative rounded-full h-32 w-32 mx-auto"
+            className="relative rounded-full h-32 w-32 mx-auto max-sm:h-28 max-sm:w-28 max-sm:mb-4"
             alt="Nassr Al-Emrani"
           />
           <div className="z-20">
-            <h2 className="text-sm uppercase text-primary-200 pb-2 tracking-[10px]">
+            <h2 className="text-sm uppercase text-primary-200 pb-2 tracking-[10px] max-sm:text-xs">
               {pageInfo?.role}
             </h2>
-            <h1 className="text-5xl lg:text-6xl font-semibold scroll-px-10">
+            <h1 className="text-5xl lg:text-6xl font-semibold scroll-px-10 max-sm:text-xl max-xs:text-lg">
               <span className="text-primary-100">{text}</span>
               <Cursor cursorColor="#e2e2e9" />
             </h1>

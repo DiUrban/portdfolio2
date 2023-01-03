@@ -6,15 +6,15 @@ type Props = { skills?: Skill[] };
 
 function Skills({ skills }: Props) {
   return (
-    <motion.div className="h-screen flex relative flex-col text-center md:text-left xl:flex-row max-w-[2000px] xl:px-10 min-h-screen justify-center xl:space-y-0 mx-auto items-center">
+    <div className="h-screen flex relative flex-col text-center md:text-left xl:flex-row max-w-[2000px] xl:px-10 min-h-screen justify-center xl:space-y-0 mx-auto items-center">
       {" "}
-      <h3 className="absolute top-24 uppercase tracking-[20px] text-primary-200 text-2xl">
+      <h3 className="absolute top-24 uppercase tracking-[20px] text-primary-200 text-2xl max-sm:text-lg">
         Skills
       </h3>
       <h3 className="absolute top-36 uppercase tracking-[3px] text-primary-200">
         Hover over a skill for a current proficiency
       </h3>
-      <div className="grid grid-cols-4 gap-5 max-sm:grid-cols-2 max-sm:mt-20">
+      <div className="grid grid-cols-4 gap-5 max-sm:grid-cols-2 max-sm:mt-20 max-sm:items-center max-sm:justify-center">
         {skills?.map(function (skill, i) {
           if ((i + 1) % 2) {
             let directionLeft = true;
@@ -39,7 +39,7 @@ function Skills({ skills }: Props) {
           }
         })}
       </div>
-    </motion.div>
+    </div>
   );
 }
 

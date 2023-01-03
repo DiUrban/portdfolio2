@@ -7,6 +7,9 @@ module.exports = {
   ],
   theme: {
     extend: {
+      screens: {
+        xs: "380px", // min-width
+      },
       colors: {
         primary: {
           DEFAULT: "hsl(225,80%,30%)",

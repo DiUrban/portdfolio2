@@ -80,28 +80,32 @@ function ContactMe({ pageInfo }: Props) {
         pauseOnHover
         theme="dark"
       />
-      <h3 className="absolute top-24 mb-2 uppercase tracking-[20px] text-primary-200 text-2xl">
+      <h3 className="absolute top-24 mb-2 uppercase tracking-[20px] text-primary-200 text-2xl max-sm:text-lg">
         Contact
       </h3>
-      <div className="flex flex-col space-y-10 ">
-        <h4 className="text-4xl font-semibold text-center">
+      <div className="flex flex-col space-y-10 max-xs:space-y-1 max-xs:mt-10 ">
+        <h4 className="text-4xl font-semibold text-center max-sm:text-xl max-xs:text-lg max-xs:mt-6">
           Get in touch and see how much
           <br />
-          <span className="underline decoration-primary-300">
+          <span className="underline decoration-primary-200">
             Value I Can Provide you
           </span>
         </h4>
-        <div className="flex flex-col space-y-4">
+        <div className="flex flex-col space-y-4 max-xs:space-y-0">
           <a href={`https://wa.me/${pageInfo?.phoneNumber}`}>
             <div className="flex items-center space-x-5">
               <PhoneIcon className="text-primary-900 h-7 w-7 animate-pulse" />
-              <p className="text-2xl">{pageInfo?.phoneNumber}</p>
+              <p className="text-2xl max-sm:text-lg max-xs:text-base ">
+                {pageInfo?.phoneNumber}
+              </p>
             </div>
           </a>
           <a href={`mailto:${pageInfo?.email}`}>
             <div className="flex items-center space-x-5">
               <EnvelopeIcon className="text-primary-900 h-7 w-7 animate-pulse" />
-              <p className="text-2xl">Email me</p>
+              <p className="text-2xl max-sm:text-lg max-xs:text-base">
+                Email me
+              </p>
             </div>
           </a>
         </div>
