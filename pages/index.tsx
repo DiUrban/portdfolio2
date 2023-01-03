@@ -89,6 +89,6 @@ export const getStaticProps: GetStaticProps<Props> = async () => {
   const experiences = await loadExperiences();
   return {
     props: { pageInfo, skills, projects, socials, experiences },
-    revalidate: 3600,
+    revalidate: 300,
   };
 };
