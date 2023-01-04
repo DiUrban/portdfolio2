@@ -37,6 +37,7 @@ export interface Skill extends SanityBody {
   title: string;
 }
 export interface Project extends SanityBody {
+  pos: number;
   _type: string;
   title: string;
   technologies: Skill[];

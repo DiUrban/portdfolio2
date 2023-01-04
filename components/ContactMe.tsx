@@ -80,7 +80,7 @@ function ContactMe({ pageInfo }: Props) {
         pauseOnHover
         theme="dark"
       />
-      <h3 className="absolute top-24 mb-2 uppercase tracking-[20px] text-primary-200 text-2xl max-sm:text-lg">
+      <h3 className="absolute top-20 mb-2 uppercase tracking-[20px] text-primary-200 text-2xl max-sm:text-lg">
         Contact
       </h3>
       <div className="flex flex-col space-y-10 max-xs:space-y-1 max-xs:mt-10 ">

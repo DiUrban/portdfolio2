@@ -5,33 +5,37 @@ import { urlFor } from "../sanity";
 import { Project, Skill } from "../typings";
 import SingleSkill from "./Skill";
 type Props = { projects?: Project[] };
-
 function Projects({ projects }: Props) {
+  if (projects) {
+    projects.sort((a, b) => {
+      return a.pos >= b.pos ? 1 : -1;
+    });
+  }
+
   return (
     <div className="h-screen relative flex flex-col text-left md:flex-row max-w-full justify-evenly mx-auto items-center z-0 overflow-hidden">
-      <h3 className="absolute top-24 uppercase tracking-[20px] text-primary-200 text-2xl max-sm:text-lg">
+      <h3 className="absolute top-20 uppercase tracking-[20px] text-primary-200 text-2xl max-sm:text-lg">
         {" "}
         Projects
       </h3>
-      <div className="relative w-full h-full flex overflow-x-scroll overflow-y-hidden snap-x snap-mandatory z-20 scrollbar scrollbar-track-primary-500 scrollbar-thumb-primary-900 scrollbar-corner-primary-200 mt-48 max-sm:mt-32 items-center justify-center flex-row">
+      <div className="relative w-full h-full flex overflow-x-scroll overflow-y-hidden snap-x snap-mandatory z-20 scrollbar scrollbar-track-primary-500 scrollbar-thumb-primary-900 scrollbar-corner-primary-200 mt-24 max-sm:mt-32 items-center justify-start flex-row start -ml-1">
         {/* projects */}
         {projects?.map((project, i) => (
           <div
-            key={project._id}
-            className="w-screen flex-shrink-0 snap-center flex-col space-y-5 items-center justify-center p-20 md:p-22 h-screen mx-auto"
+            key={project.pos}
+            className="w-screen flex-shrink-0 snap-center flex-col space-y-5 items-center justify-center p-20 md:p-22 h-[80vh] space-x-0 -mt-[20vh]"
           >
             <motion.div
               className="flex items-center justify-center"
               initial={{ y: -90, opacity: 0 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
             >
               <Image
                 src={urlFor(project.image).url()}
                 height={4000}
                 width={7000}
                 alt="Project"
-                className="max-h-96 max-w-screen-sm w-4/5 h-2/3 max-sm:h-full max-sm:w-[90vw]"
+                className="max-h-96  w-4/5 h-2/3 max-sm:h-full max-sm:w-[90vw]"
               />
             </motion.div>
             <div className="space-y-2 px-0 md:px-10 max-w-6xl mx-auto flex-shrink-0">

@@ -13,7 +13,7 @@ function About({ pageInfo }: Props) {
       transition={{ duration: 1.5 }}
       className="flex flex-col relative h-screen text-center md:text-justify md:flex-row max-w-7xl px-10 mx-auto justify-evenly items-center"
     >
-      <h3 className="absolute top-24 uppercase tracking-[20px] text-primary-200 text-2xl">
+      <h3 className="absolute top-20 uppercase tracking-[20px] text-primary-200 text-2xl">
         about
       </h3>
       <motion.div

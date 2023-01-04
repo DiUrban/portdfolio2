@@ -5,6 +5,7 @@ export default defineType({
   title: 'Projects',
   type: 'document',
   fields: [
+    {name: 'pos', title: 'Position', type: 'number'},
     {
       name: 'title',
       title: 'Title',

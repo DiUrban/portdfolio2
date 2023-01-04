@@ -41,7 +41,7 @@ function About({ pageInfo  }) {
         className: "flex flex-col relative h-screen text-center md:text-justify md:flex-row max-w-7xl px-10 mx-auto justify-evenly items-center",
         children: [
             /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("h3", {
-                className: "absolute top-24 uppercase tracking-[20px] text-primary-200 text-2xl",
+                className: "absolute top-20 uppercase tracking-[20px] text-primary-200 text-2xl",
                 children: "about"
             }),
             /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(framer_motion__WEBPACK_IMPORTED_MODULE_1__.motion.div, {
@@ -268,7 +268,7 @@ function ContactMe({ pageInfo  }) {
                 theme: "dark"
             }),
             /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("h3", {
-                className: "absolute top-24 mb-2 uppercase tracking-[20px] text-primary-200 text-2xl max-sm:text-lg",
+                className: "absolute top-20 mb-2 uppercase tracking-[20px] text-primary-200 text-2xl max-sm:text-lg",
                 children: "Contact"
             }),
             /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
@@ -606,20 +606,25 @@ var __webpack_async_dependencies__ = __webpack_handle_async_dependencies__([fram
 
 
 function Projects({ projects  }) {
+    if (projects) {
+        projects.sort((a, b)=>{
+            return a.pos >= b.pos ? 1 : -1;
+        });
+    }
     return /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
         className: "h-screen relative flex flex-col text-left md:flex-row max-w-full justify-evenly mx-auto items-center z-0 overflow-hidden",
         children: [
             /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("h3", {
-                className: "absolute top-24 uppercase tracking-[20px] text-primary-200 text-2xl max-sm:text-lg",
+                className: "absolute top-20 uppercase tracking-[20px] text-primary-200 text-2xl max-sm:text-lg",
                 children: [
                     " ",
                     "Projects"
                 ]
             }),
             /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("div", {
-                className: "relative w-full h-full flex overflow-x-scroll overflow-y-hidden snap-x snap-mandatory z-20 scrollbar scrollbar-track-primary-500 scrollbar-thumb-primary-900 scrollbar-corner-primary-200 mt-48 max-sm:mt-32 items-center justify-center flex-row",
+                className: "relative w-full h-full flex overflow-x-scroll overflow-y-hidden snap-x snap-mandatory z-20 scrollbar scrollbar-track-primary-500 scrollbar-thumb-primary-900 scrollbar-corner-primary-200 mt-24 max-sm:mt-32 items-center justify-start flex-row start -ml-1",
                 children: projects?.map((project, i)=>/*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
-                        className: "w-screen flex-shrink-0 snap-center flex-col space-y-5 items-center justify-center p-20 md:p-22 h-screen mx-auto",
+                        className: "w-screen flex-shrink-0 snap-center flex-col space-y-5 items-center justify-center p-20 md:p-22 h-[80vh] space-x-0 -mt-[20vh]",
                         children: [
                             /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(framer_motion__WEBPACK_IMPORTED_MODULE_1__.motion.div, {
                                 className: "flex items-center justify-center",
@@ -631,15 +636,12 @@ function Projects({ projects  }) {
                                     opacity: 1,
                                     y: 0
                                 },
-                                viewport: {
-                                    once: true
-                                },
                                 children: /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx((next_image__WEBPACK_IMPORTED_MODULE_2___default()), {
                                     src: (0,_sanity__WEBPACK_IMPORTED_MODULE_4__/* .urlFor */ .uH)(project.image).url(),
                                     height: 4000,
                                     width: 7000,
                                     alt: "Project",
-                                    className: "max-h-96 max-w-screen-sm w-4/5 h-2/3 max-sm:h-full max-sm:w-[90vw]"
+                                    className: "max-h-96 w-4/5 h-2/3 max-sm:h-full max-sm:w-[90vw]"
                                 })
                             }),
                             /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
@@ -696,7 +698,7 @@ function Projects({ projects  }) {
                                 ]
                             })
                         ]
-                    }, project._id))
+                    }, project.pos))
             }),
             /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("div", {
                 className: "w-full absolute top-[30%] bg-primary-900/30 h-[500px] left-0 -skew-y-12"
@@ -807,7 +809,7 @@ function Skills({ skills  }) {
         children: [
             " ",
             /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("h3", {
-                className: "absolute top-24 uppercase tracking-[20px] text-primary-200 text-2xl max-sm:text-lg",
+                className: "absolute top-20 uppercase tracking-[20px] text-primary-200 text-2xl max-sm:text-lg",
                 children: "Skills"
             }),
             /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("h3", {
@@ -860,35 +862,35 @@ __webpack_require__.d(__webpack_exports__, {
 ;// CONCATENATED MODULE: ./utils/fetcher.ts
 // FETCH SKILLS
 const fetchSkills = async ()=>{
-    const res = await fetch(`${"http://127.0.0.1:3000"}/api/getSkills`);
+    const res = await fetch(`${"https://emrani.co.uk"}/api/getSkills`);
     const data = await res.json();
     const skills = data.skills;
     return skills;
 };
 // FETCH SOCIALS
 const fetchSocials = async ()=>{
-    const res = await fetch(`${"http://127.0.0.1:3000"}/api/getSocials`);
+    const res = await fetch(`${"https://emrani.co.uk"}/api/getSocials`);
     const data = await res.json();
     const socials = data.socials;
     return socials;
 };
 // FETCH PROJECTS
 const fetchProjects = async ()=>{
-    const res = await fetch(`${"http://127.0.0.1:3000"}/api/getProjects`);
+    const res = await fetch(`${"https://emrani.co.uk"}/api/getProjects`);
     const data = await res.json();
     const projects = data.projects;
     return projects;
 };
 // FETCH PAGEINFO
 const fetchPageInfo = async ()=>{
-    const res = await fetch(`${"http://127.0.0.1:3000"}/api/getPageInfo`);
+    const res = await fetch(`${"https://emrani.co.uk"}/api/getPageInfo`);
     const data = await res.json();
     const pageInfo = data.pageInfo;
     return pageInfo;
 };
 // FETCH EXPERIENCE
 const fetchExperiences = async ()=>{
-    const res = await fetch(`${"http://127.0.0.1:3000"}/api/getExperiences`);
+    const res = await fetch(`${"https://emrani.co.uk"}/api/getExperiences`);
     const data = await res.json();
     const experiences = data.experiences;
     return experiences;
