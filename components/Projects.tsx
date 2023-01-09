@@ -33,17 +33,14 @@ function Projects({ projects }: Props) {
               <Image
                 src={urlFor(project.image).url()}
                 height={4000}
-                width={7000}
+                width={1000}
                 alt="Project"
-                className="max-h-96  w-4/5 h-2/3 max-sm:h-full max-sm:w-[90vw]"
+                className="max-h-96 h-2/3 max-sm:h-full max-sm:w-[90vw]"
               />
             </motion.div>
-            <div className="space-y-2 px-0 md:px-10 max-w-6xl mx-auto flex-shrink-0">
+            <div className="space-y-2 px-0 md:px-10 w-full mx-auto flex-shrink-0">
               <h4 className="text-4xl font-semibold text-center max-sm:text-xl max-md:text-2xl">
-                <span className=" decoration-primary-200">
-                  Case study {i + 1} of {projects?.length}
-                </span>{" "}
-                :{" "}
+                Case study {i + 1} of {projects?.length} :{" "}
                 <a href={project.linkToBuild}>
                   <span className="text-decoration underline decoration-wavy hover:decoration-primary-100 hover:decoration-double hover:decoration-1">
                     {project?.title}
@@ -75,9 +72,11 @@ function Projects({ projects }: Props) {
                   }
                 })}
               </div>
-              <p className="text-lg text-justify inter-word max-sm:text-base">
-                {project?.summary}
-              </p>
+              <div className="flex w-2/3 max-w-6xl mx-auto">
+                <p className="text-lg text-justify inter-word max-sm:text-base max-w-6xl">
+                  {project?.summary}
+                </p>
+              </div>
             </div>
           </div>
         ))}
