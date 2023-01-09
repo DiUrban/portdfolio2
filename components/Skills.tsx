@@ -14,7 +14,7 @@ function Skills({ skills }: Props) {
       <h3 className="absolute top-36 uppercase tracking-[3px] text-primary-200">
         Hover over a skill for a current proficiency
       </h3>
-      <div className="grid grid-cols-4 gap-5 max-sm:grid-cols-2 max-sm:mt-20 max-sm:items-center max-sm:justify-center">
+      <div className="grid gap-5 xs:grid-cols-4 md:grid-cols-6 lg:grid-cols-8 xl:grid-cols-10 xs:mt-40 sm:mt-32 md:mt-20 lg:mt-16 items-center justify-center h-min">
         {skills?.map(function (skill, i) {
           if ((i + 1) % 2) {
             let directionLeft = true;

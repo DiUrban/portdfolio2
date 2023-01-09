@@ -21,8 +21,8 @@ function SingleSkill({ directionLeft, skill, projects }: Props) {
               : projects
               ? 80
               : directionLeft
-              ? -130
-              : 130,
+              ? -100
+              : 100,
           opacity: 0,
         }}
         transition={{ duration: 1 }}

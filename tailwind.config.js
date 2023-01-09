@@ -8,7 +8,7 @@ module.exports = {
   theme: {
     extend: {
       screens: {
-        xs: "380px", // min-width
+        xs: "319px", // min-width
       },
       colors: {
         primary: {
