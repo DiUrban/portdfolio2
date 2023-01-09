@@ -32,8 +32,8 @@ function Projects({ projects }: Props) {
             >
               <Image
                 src={urlFor(project.image).url()}
-                height={4000}
-                width={1000}
+                height={1600}
+                width={900}
                 alt="Project"
                 className="max-h-96 h-2/3 max-sm:h-full max-sm:w-[90vw]"
               />
@@ -72,7 +72,7 @@ function Projects({ projects }: Props) {
                   }
                 })}
               </div>
-              <div className="flex w-2/3 max-w-6xl mx-auto">
+              <div className="flex w-3/4 max-w-6xl mx-auto">
                 <p className="text-lg text-justify inter-word max-sm:text-base max-w-6xl">
                   {project?.summary}
                 </p>
