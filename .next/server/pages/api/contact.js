@@ -34,7 +34,7 @@ const transporter = external_nodemailer_default().createTransport({
 });
 const mailOptions = {
     from: email,
-    to: "nassr_emrani@icloud.com"
+    to: process.env.SENTTOEMAIL
 };
 
 ;// CONCATENATED MODULE: ./pages/api/contact.ts

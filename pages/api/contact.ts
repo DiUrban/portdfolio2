@@ -1,5 +1,4 @@
 import { NextApiHandler } from "next";
-import { Request, Response } from "node-fetch";
 import { mailOptions, transporter } from "../../config/nodemailer";
 type Data = {
   name: string;

@@ -859,35 +859,35 @@ __webpack_require__.d(__webpack_exports__, {
 ;// CONCATENATED MODULE: ./utils/fetcher.ts
 // FETCH SKILLS
 const fetchSkills = async ()=>{
-    const res = await fetch(`${"http://localhost:3000"}/api/getSkills`);
+    const res = await fetch(`${"https://emrani.co.uk"}/api/getSkills`);
     const data = await res.json();
     const skills = data.skills;
     return skills;
 };
 // FETCH SOCIALS
 const fetchSocials = async ()=>{
-    const res = await fetch(`${"http://localhost:3000"}/api/getSocials`);
+    const res = await fetch(`${"https://emrani.co.uk"}/api/getSocials`);
     const data = await res.json();
     const socials = data.socials;
     return socials;
 };
 // FETCH PROJECTS
 const fetchProjects = async ()=>{
-    const res = await fetch(`${"http://localhost:3000"}/api/getProjects`);
+    const res = await fetch(`${"https://emrani.co.uk"}/api/getProjects`);
     const data = await res.json();
     const projects = data.projects;
     return projects;
 };
 // FETCH PAGEINFO
 const fetchPageInfo = async ()=>{
-    const res = await fetch(`${"http://localhost:3000"}/api/getPageInfo`);
+    const res = await fetch(`${"https://emrani.co.uk"}/api/getPageInfo`);
     const data = await res.json();
     const pageInfo = data.pageInfo;
     return pageInfo;
 };
 // FETCH EXPERIENCE
 const fetchExperiences = async ()=>{
-    const res = await fetch(`${"http://localhost:3000"}/api/getExperiences`);
+    const res = await fetch(`${"https://emrani.co.uk"}/api/getExperiences`);
     const data = await res.json();
     const experiences = data.experiences;
     return experiences;
